@@ -15,16 +15,18 @@ export class MainPage extends Component {
     }
   }
 
-  componentDidMount() {
-    this.props.onRequestRobots()
-  }
 
-  filterRobots = () => {
-    const { robots, searchField } = this.props
-    return robots.filter((robot) => {
-      return robot.name.toLowerCase().includes(searchField.toLowerCase())
-    })
-  }
+
+componentDidMount() {
+this.props.onRequestRobots()
+}
+
+filterRobots = () => {
+const { robots, searchField } = this.props
+return robots.filter((robot) => {
+return robot.name.toLowerCase().includes(searchField.toLowerCase())
+})
+}
 
   render() {
     const { onSearchChange, isPending } = this.props
