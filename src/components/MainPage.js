@@ -26,6 +26,18 @@ export class MainPage extends Component {
     })
   }
 
+
+
+
+
+
+
+
+
+
+
+  
+
   render() {
     const { onSearchChange, isPending } = this.props
 
