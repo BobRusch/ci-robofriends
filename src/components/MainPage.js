@@ -8,64 +8,52 @@ import ErrorBoundry from './ErrorBoundry'
 import Header from './Header'
 
 export class MainPage extends Component {
-constructor() {
-super()
-this.state = {
-count: 1
-}
-}
+  constructor() {
+    super()
+    this.state = {
+      count: 1
+    }
+  }
 
-componentDidMount() {
-this.props.onRequestRobots()
-}
+  componentDidMount() {
+    this.props.onRequestRobots()
+  }
 
-filterRobots = () => {
-const { robots, searchField } = this.props
-return robots.filter((robot) => {
-return robot.name.toLowerCase().includes(searchField.toLowerCase())
-})
-}
+  filterRobots = () => {
+    const { robots, searchField } = this.props
+    return robots.filter((robot) => {
+      return robot.name.toLowerCase().includes(searchField.toLowerCase())
+    })
+  }
 
+  render() {
+    const { onSearchChange, isPending } = this.props
 
-
-
-
-
-
-
-
-
-
-
-
-render() {
-const { onSearchChange, isPending } = this.props
-
-return (
-<div className='tc'>
-<Header count={this.state.count} />
-<SearchBox searchChange={onSearchChange} />
-<Scroll>
-{isPending ? (
-<h1>Loading</h1>
-) : (
-<ErrorBoundry>
-<CardList robots={this.filterRobots()} />
-</ErrorBoundry>
-)}
-</Scroll>
-</div>
-)
-}
+    return (
+      <div className='tc'>
+        <Header count={this.state.count} />
+        <SearchBox searchChange={onSearchChange} />
+        <Scroll>
+          {isPending ? (
+            <h1>Loading</h1>
+          ) : (
+            <ErrorBoundry>
+              <CardList robots={this.filterRobots()} />
+            </ErrorBoundry>
+          )}
+        </Scroll>
+      </div>
+    )
+  }
 }
 
 MainPage.propTypes = {
-robots: PropTypes.array,
-searchField: PropTypes.string,
-onRequestRobots: PropTypes.func,
-onSearchChange: PropTypes.func,
-isPending: PropTypes.bool,
-filterRobots: PropTypes.func
+  robots: PropTypes.array,
+  searchField: PropTypes.string,
+  onRequestRobots: PropTypes.func,
+  onSearchChange: PropTypes.func,
+  isPending: PropTypes.bool,
+  filterRobots: PropTypes.func
 }
 
 export default MainPage
