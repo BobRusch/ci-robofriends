@@ -29,7 +29,8 @@
     "build": "react-scripts build",
     "linter": "lint-staged",
     "test": "cross-env CI=true react-scripts test --env=jsdom --coverage",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "precommit": "lint-staged && npm test && git add ."
   },
   "browserslist": {
     "production": [
@@ -84,7 +85,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged && yarn test"
+      "precommit": "lint-staged && npm test && git add ."
     }
   },
   "lint-staged": {
