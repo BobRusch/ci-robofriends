@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { setSearchField, requestRobots } from '../actions';
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { setSearchField, requestRobots } from '../actions'
 
 import MainPage from '../components/MainPage'
 
-import './App.css';
+import './App.css'
 
 const mapStateToProps = (state) => {
   return {
@@ -23,7 +23,7 @@ const mapDispatchToProps = (dispatch) => {
 
 class App extends Component {
   render() {
-    return <MainPage {...this.props}/>
+    return <MainPage {...this.props} />
   }
 }
 
