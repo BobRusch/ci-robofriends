@@ -1,0 +1,120 @@
+{
+  "name": "robofriends",
+  "version": "0.1.0",
+  "private": true,
+  "homepage": "https://aneagoie.github.io/robofriends-pwa",
+  "dependencies": {
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.5",
+    "fetch-mock": "^9.10.7",
+    "gh-pages": "^3.1.0",
+    "nock": "^13.0.4",
+    "pretty-quick": "^3.0.2",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
+    "react-peer": "^0.2.6",
+    "react-redux": "^7.2.1",
+    "react-scripts": "^4.0.2",
+    "react-test-renderer": "^16.13.1",
+    "redux": "^4.0.5",
+    "redux-logger": "^3.0.6",
+    "redux-mock-store": "^1.5.4",
+    "redux-thunk": "^2.3.0",
+    "tachyons": "^4.12.0"
+  },
+  "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "cross-env CI=true react-scripts test --env=jsdom --coverage",
+    "eject": "react-scripts eject"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "eslintConfig": {
+    "env": {
+      "es2021": true,
+      "node": true
+    },
+    "extends": [
+      "react-app",
+      "react-app/jest",
+      "plugin:prettier/recommended",
+      "standard"
+    ],
+    "parserOptions": {
+      "ecmaFeatures": {
+        "jsx": true
+      },
+      "ecmaVersion": "2021",
+      "sourceType": "module"
+    },
+    "rules": {
+      "space-before-function-paren": [
+        "error",
+        "never"
+      ],
+      "multiline-ternary": [
+        "warn",
+        "never"
+      ]
+    }
+  },
+  "prettier": {
+    "singleQuote": true,
+    "jsxSingleQuote": true,
+    "printWidth": 90,
+    "bracketSpacing": true,
+    "trailingComma": "none",
+    "arrowParens": "always",
+    "semi": false,
+    "tabWidth": 2
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged && yarn test"
+    }
+  },
+  "lint-staged": {
+    "*.+(js|jsx)": [
+      "eslint --fix",
+      "pretty-quick --staged --write",
+      "git add ."
+    ],
+    "*.+(json|css|md)": [
+      "pretty-quick --staged --write",
+      "git add ."
+    ]
+  },
+  "devDependencies": {
+    "-": "0.0.1",
+    "@typescript-eslint/eslint-plugin": "^4.15.0",
+    "@typescript-eslint/parser": "^4.15.0",
+    "cross-env": "^7.0.3",
+    "eslint": "^7.19.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-prettier": "^7.2.0",
+    "eslint-config-standard": "^16.0.2",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.3.1",
+    "eslint-plugin-promise": "^4.3.1",
+    "eslint-plugin-react": "^7.22.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "husky": "^4.3.8",
+    "lint-staged": "^10.5.4",
+    "prettier": "^2.2.1"
+  }
+}
